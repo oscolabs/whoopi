@@ -18,6 +18,7 @@ from requests import post
 client_id='07fa9a7e-6e68-4ca1-aa03-e535ca5f7816'
 client_secret= 'f488d57fb86082c1125b565a36375ba9c63e3768c2fe04a82c3bff6b1097fbb8'
 
+url1 = 'https://api.prod.whoop.com/oauth/oauth2/auth'
 url2 = 'https://api.prod.whoop.com/oauth/oauth2/token'
 
 
@@ -28,7 +29,7 @@ def get_token():
     auth_bytes = auth_string.encode('utf-8')
     auth_base64 = str(base64.b64encode(auth_bytes), "utf-8")
 
-    url = 'https://api.prod.whoop.com/oauth/oauth2/auth'
+    url = 'https://api.prod.whoop.com/oauth/oauth2/token'
     headers = {
         'Authorization': 'Basic ' + auth_base64,
         'Content-Type': 'application/x-www-form-urlencoded'

@@ -19,8 +19,9 @@ def get_access_token(url, client_id, client_secret):
         data={"grant_type": "client_credentials"},
         auth=(client_id, client_secret),
     )
-    st.write(response.json()["access_token"])
+    token = response.json()["access_token"]
 
+st.write(token)
 #st.write(response.json()["access_token"])
 # get_access_token("https://api.example.com/access_token", "abcde", "12345")
 

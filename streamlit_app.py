@@ -20,7 +20,7 @@ def get_access_token(url, client_id, client_secret):
     )
     return response.json()["access_token"]
 
-
+st.write(response.json()["access_token"])
 # get_access_token("https://api.example.com/access_token", "abcde", "12345")
 
 # # Generate data

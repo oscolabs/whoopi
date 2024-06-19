@@ -40,7 +40,7 @@ def get_token():
     return token 
 
 token = get_token()
-print(token)
+st.write(token)
 
 # client_id='07fa9a7e-6e68-4ca1-aa03-e535ca5f7816'
 # client_secret= 'f488d57fb86082c1125b565a36375ba9c63e3768c2fe04a82c3bff6b1097fbb8'

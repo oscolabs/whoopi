@@ -29,7 +29,7 @@ def get_token():
     auth_bytes = auth_string.encode('utf-8')
     auth_base64 = str(base64.b64encode(auth_bytes), "utf-8")
 
-    url = 'https://api.prod.whoop.com/oauth/oauth2/token'
+    url = 'https://api.prod.whoop.com/oauth/oauth2/auth'
     headers = {
         'Authorization': 'Basic ' + auth_base64,
         'Content-Type': 'application/x-www-form-urlencoded'

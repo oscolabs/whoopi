@@ -23,6 +23,10 @@ client_secret= 'f488d57fb86082c1125b565a36375ba9c63e3768c2fe04a82c3bff6b1097fbb8
 client_id = urllib.parse.quote(client_id.encode('utf8'))
 client_secret = urllib.parse.quote(client_secret.encode('utf8'))
 
+code_bytes = f"{client_id}:{client_secret}".encode('ascii')
+base64_bytes = base64.b64encode(code_bytes)
+base64_code = base64_bytes.decode('ascii')
+
 url1 = 'https://api.prod.whoop.com/oauth/oauth2/auth'
 url2 = 'https://api.prod.whoop.com/oauth/oauth2/token'
 

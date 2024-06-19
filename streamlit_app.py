@@ -14,13 +14,34 @@ import os
 import base64
 import json
 from requests import post
+import urllib.parse
+
 
 client_id='07fa9a7e-6e68-4ca1-aa03-e535ca5f7816'
 client_secret= 'f488d57fb86082c1125b565a36375ba9c63e3768c2fe04a82c3bff6b1097fbb8'
 
+client_id = urllib.parse.quote(client_id.encode('utf8'))
+client_secret = urllib.parse.quote(clientSecret.encode('utf8'))
+
 url1 = 'https://api.prod.whoop.com/oauth/oauth2/auth'
 url2 = 'https://api.prod.whoop.com/oauth/oauth2/token'
 
+
+headers ={
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36',
+    'Content-Type': "application/x-www-form-urlencoded",
+    'Authorization': f"Basic {base64_code}"
+}
+
+data = {   
+    "grant_type" : "authorization_code",
+    'code': authorization_code , 
+    'redirect_uri': redirect_uri
+}
+
+response = requests.post(url1, data=data, headers=headers)
+print(response)
+print(response.text)
 
 print(client_id, client_secret)
 

@@ -35,7 +35,7 @@ def get_token():
     token = json_result['access_token']
     return token 
 
-st.write(get_token)
+st.write(token)
 
 
 # client_id='07fa9a7e-6e68-4ca1-aa03-e535ca5f7816'
